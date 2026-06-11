@@ -12,6 +12,23 @@ func (st *Stack[T]) Push(val T) bool {
 	return true
 }
 
+// Returns the most recent value from the stack, but does not affect the underlying storage
+// Returns a bool indicating whether the popped value is valid
+func (st *Stack[T]) Peek() (T, bool) {
+
+	// Initialize return var to 0 value
+	var val T
+
+	// Immediately return if stack is empty
+	if st.Depth() == 0 {
+		return val, false
+	}
+
+	// Remove top element from stack and return it
+	val = st.contents[len(st.contents)-1]
+	return val, true
+}
+
 // Pops the most recent value from the stack, removing it from the underlying slice
 // Returns a bool indicating whether the popped value is valid
 func (st *Stack[T]) Pop() (T, bool) {
