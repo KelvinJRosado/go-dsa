@@ -12,10 +12,7 @@ func TestPushPopIntBasic(t *testing.T) {
 		t.Errorf("Expected 0 depth after init. Received %v", depth)
 	}
 
-	ok, err := myStack.Push(1)
-	if err != nil {
-		t.Errorf("Error pushing to stack: %v", err)
-	}
+	ok := myStack.Push(1)
 	if !ok {
 		t.Errorf("Push was not okay")
 	}
@@ -25,9 +22,9 @@ func TestPushPopIntBasic(t *testing.T) {
 		t.Errorf("Expected 1 depth after push. Received %v", depth)
 	}
 
-	val, err := myStack.Pop()
-	if err != nil {
-		t.Errorf("Error pushing to stack: %v", err)
+	val, ok := myStack.Pop()
+	if !ok {
+		t.Errorf("Error pushing to stack")
 	}
 	if val != 1 {
 		t.Errorf("Did not pop expected value. Expected: %v , Received %v", 1, val)
