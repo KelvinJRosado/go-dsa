@@ -1,0 +1,29 @@
+# Binaries and build output
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+bin/
+dist/
+
+# Test and coverage output
+*.test
+*.prof
+*.cover
+coverage.out
+coverage.html
+
+# Go workspace files
+go.work
+go.work.sum
+
+# Local caches
+.gocache/
+
+# Editor and OS files
+.DS_Store
+.idea/
+.vscode/
+*.swp
+*.swo
